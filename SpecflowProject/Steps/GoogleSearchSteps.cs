@@ -44,6 +44,24 @@ namespace SpecflowProject.Steps
             Assert.IsTrue(element.Displayed);
             driver.Quit();
         }
+
+
+        // Table
+        [When(@"I search for following (.*)")]
+        public void WhenISearchForFollowing(string p0)
+        {
+            SearchBar.SendKeys(p0 + Keys.Enter);
+        }
+
+        [Then(@"I should see following (.*)")]
+        public void ThenIShouldSeeFollowing(string p1)
+        {
+            string result = driver.FindElement(By.CssSelector(".LC20lb")).Text;
+            Assert.IsTrue(result.Contains(p1));
+            driver.Quit();
+        }
+
+
     }
 }
 

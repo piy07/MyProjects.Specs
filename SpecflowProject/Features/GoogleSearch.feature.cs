@@ -66,10 +66,10 @@ namespace SpecflowProject.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("I want to if the search page is fully loaded.", SourceLine=6)]
-        public virtual void IWantToIfTheSearchPageIsFullyLoaded_()
+        [TechTalk.SpecRun.ScenarioAttribute("I want to check if the search page is fully loaded.", SourceLine=6)]
+        public virtual void IWantToCheckIfTheSearchPageIsFullyLoaded_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I want to if the search page is fully loaded.", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I want to check if the search page is fully loaded.", null, ((string[])(null)));
 #line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -83,6 +83,48 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I should see selenium in the search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        public virtual void IWantToSearchTheFollowingKeywords_(string keywords, string results, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I want to search the following keywords.", null, exampleTags);
+#line 15
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 16
+ testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 17
+ testRunner.And("I should see the page fully loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.When(string.Format("I search for following {0}", keywords), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+ testRunner.Then(string.Format("I should see following {0}", results), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("I want to search the following keywords., microsoft", SourceLine=22)]
+        public virtual void IWantToSearchTheFollowingKeywords__Microsoft()
+        {
+#line 15
+this.IWantToSearchTheFollowingKeywords_("microsoft", "Microsoft - Official Home Page", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("I want to search the following keywords., audi", SourceLine=22)]
+        public virtual void IWantToSearchTheFollowingKeywords__Audi()
+        {
+#line 15
+this.IWantToSearchTheFollowingKeywords_("audi", "Audi", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("I want to search the following keywords., bmw", SourceLine=22)]
+        public virtual void IWantToSearchTheFollowingKeywords__Bmw()
+        {
+#line 15
+this.IWantToSearchTheFollowingKeywords_("bmw", "BMW", ((string[])(null)));
+#line hidden
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]
